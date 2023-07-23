@@ -18,7 +18,7 @@ app.post('/send-noti', (req, res) => {
         //     body: req.body.msg,
         //     largeIcon: req.body.image,
         // },
-        tokens: req.body.token
+        tokens: req.body.tokens
 
     }
 
