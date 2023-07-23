@@ -5,7 +5,7 @@
   "main": "notificationBackend.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node notificationBackend.js"
   },
   "author": "",
   "license": "ISC",
