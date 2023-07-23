@@ -13,11 +13,11 @@ app.post('/send-noti', (req, res) => {
     console.log('req.body: ', req.body)
     
     const message = {
-        data: {
-            title: req.body.name,
-            body: req.body.msg,
-            largeIcon: req.body.image,
-        },
+        // data: {
+        //     title: req.body.name,
+        //     body: req.body.msg,
+        //     largeIcon: req.body.image,
+        // },
         tokens: req.body.token
 
     }
