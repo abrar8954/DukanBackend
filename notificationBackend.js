@@ -3,20 +3,21 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
-var serviceAccount = require("./dukanfiba-firebase-adminsdk-6rokc-7d2bbfdd2c.json");
+var serviceAccount = require("./dukanfiba-firebase-adminsdk-6rokc-9935e69409.json");
 app.use(express.json())
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
 
+
+
 app.post('/send-noti', (req, res) => {
-    console.log('req.body: ', req.body)
+    console.log('req.body.tokens: ', req.body.tokens)
+    
+
 
     const message = {
         data: {
-            // title: req.body.name,
-            // body: req.body.msg,
-            // largeIcon: req.body.image,
             title: 'Hi there',
             body: 'This message was sent via FCM!',
             largeIcon: 'https://firebasestorage.googleapis.com/v0/b/dukanfiba.appspot.com/o/images%2FshopImages%2F-NWDYgcOggK8JILReyRt?alt=media&token=58ede0d3-7b8a-4e51-8228-fd35660bc49e',
@@ -25,7 +26,7 @@ app.post('/send-noti', (req, res) => {
 
     }
 
-    admin.messaging().send(message).then(res => {
+    admin.messaging().sendMulticast(message).then(res => {
         console.log('send success')
     }).catch(err => {
         console.log(err)
