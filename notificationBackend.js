@@ -26,7 +26,7 @@ app.post('/send-noti', (req, res) => {
 
     }
 
-    admin.messaging().sendMulticast(message).then(res => {
+    admin.messaging().send(message).then(res => {
         console.log('send success')
     }).catch(err => {
         console.log(err)
