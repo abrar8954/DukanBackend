@@ -11,13 +11,16 @@ admin.initializeApp({
 
 app.post('/send-noti', (req, res) => {
     console.log('req.body: ', req.body)
-    
+
     const message = {
-        // data: {
-        //     title: req.body.name,
-        //     body: req.body.msg,
-        //     largeIcon: req.body.image,
-        // },
+        data: {
+            // title: req.body.name,
+            // body: req.body.msg,
+            // largeIcon: req.body.image,
+            title: 'Hi there',
+            body: 'This message was sent via FCM!',
+            largeIcon: 'https://firebasestorage.googleapis.com/v0/b/dukanfiba.appspot.com/o/images%2FshopImages%2F-NWDYgcOggK8JILReyRt?alt=media&token=58ede0d3-7b8a-4e51-8228-fd35660bc49e',
+        },
         tokens: req.body.tokens
 
     }
