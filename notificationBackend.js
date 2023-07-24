@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
-var serviceAccount = require("./dukanfiba-firebase-adminsdk-6rokc-7d2bbfdd2c.json");
+var serviceAccount = require("./dukanfiba-firebase-adminsdk-6rokc-9935e69409.json");
 app.use(express.json())
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
